@@ -2,12 +2,12 @@ import cartIcon from '../assets/images/icons/cart-icon.png'
 import { Link } from 'react-router-dom';
 function SingleOrder(props) {
 
-    return <div className='flex gap-4'>
-        <div className="w-40 p-6">
+    return <div className='grid grid-cols-[160px_1fr] min-[800px]:grid-cols-3 gap-4  p-6 '>
+        <div className="w-40 p-6 row-span-2">
                     <img src={props.imageSource} className='' />
                 </div>
 
-                <div className="pt-6">
+                <div className="pt-">
                     <div className="">
                         {props.itemDescription}
                     </div>
@@ -17,19 +17,19 @@ function SingleOrder(props) {
                     <div className="">
                         Quantity: {props.quantity}
                     </div>
-                    <button className="bg-green-600 flex h-6 ">
-                        <img className="" src={cartIcon} />
+                    <button className="bg-green-600 flex  text-white text-sm  p-1 rounded-sm">
+                        <img className="w-5 h-5  " src={cartIcon} />
                         <span className="">Add to Cart</span>
                     </button>
                 </div>
 
-                <div className="">
+                
             <Link to="/pages/Tracking">
-                <button className="border p-1 rounded-sm">
+                <button className="border border-gray-400 p-1 rounded-sm m-auto min-[800px]:w-45">
                     Track package
                     </button>
             </Link>
-                </div>
+                
     </div>
 }
 
