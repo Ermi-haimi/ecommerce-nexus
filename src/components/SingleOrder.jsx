@@ -1,4 +1,4 @@
-import cartIcon from '../assets/images/icons/cart-icon.png'
+import cartIcon from '/images/icons/cart-icon.png'
 import { Link } from 'react-router-dom';
 function SingleOrder(props) {
 

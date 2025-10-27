@@ -1,6 +1,6 @@
 import ItemCheckout from "../components/ItemCheckout";
-import socks from "../assets/images/products/athletic-cotton-socks-6-pairs.jpg"
-import basketball from "../assets/images/products/intermediate-composite-basketball.jpg"
+import socks from "/images/products/athletic-cotton-socks-6-pairs.jpg"
+import basketball from "/images/products/intermediate-composite-basketball.jpg"
 
 function Checkout(props) {
     const st = "flex justify-between "

@@ -1,10 +1,10 @@
-import cartIcon from "../assets/images/icons/cart-icon.png";
+import cartIcon from "/images/icons/cart-icon.png";
 import { Link } from "react-router-dom";
 import OrderList from "../components/OrderList";
 import SingleOrder from "../components/SingleOrder";
-import socks from "../assets/images/products/athletic-cotton-socks-6-pairs.jpg"
-import basketball from "../assets/images/products/intermediate-composite-basketball.jpg"
-import tshirt from "../assets/images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg"
+import socks from "/images/products/athletic-cotton-socks-6-pairs.jpg"
+import basketball from "/images/products/intermediate-composite-basketball.jpg"
+import tshirt from "/images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg"
 
 
 function Order(props) {

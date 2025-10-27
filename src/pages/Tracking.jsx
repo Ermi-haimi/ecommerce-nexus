@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import socks from "../assets/images/products/athletic-cotton-socks-6-pairs.jpg"
+import socks from "/images/products/athletic-cotton-socks-6-pairs.jpg"
 
 function Tracking(props) {
 
