@@ -1,14 +1,40 @@
 import Item from "../components/Item";
-// import socks from "../assets/images/products/athletic-cotton-socks-6-pairs.jpg"
-// import basketball from "../assets/images/products/intermediate-composite-basketball.jpg"
-// import tshirt from "../assets/images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg"
-// import rating1 from "/images/ratings/rating-45.png";
-// import rating2 from "/images/ratings/rating-40.png";
 import { products } from "../assets/data/products";
+import { SearchContext } from "../components/Search";
+import { useContext } from "react";
 
 function Home(props) {
+  const { searchItem } = useContext(SearchContext);
+
+  const filtered = products.filter((p) =>
+    p.name.toLowerCase().includes(searchItem.toLowerCase())
+  );
+  if (searchItem.trim() !== "") {
+    return (
+      <div className="p-4 flex-1 flex justify-center items-center w-full">
+        {filtered.length === 0 ? (
+          <p className="flex-1 w-full mt-19 text-center">No products found.</p>
+        ) : (
+          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 flex-1 w-full mt-19">
+            {filtered.map((product) => (
+              <Item
+                key={product.id}
+                itemDescription={product.name}
+                imageSource={product.image}
+                ratingIcon={`/images/ratings/rating-${
+                  product.rating.stars * 10
+                }.png`}
+                ratingValue={product.rating.count}
+                price={(product.priceCents / 100).toFixed(2)}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  }
   return (
-    <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 flex-1 w-full">
+    <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 flex-1 w-full mt-19">
       {products.map((product) => {
         return (
           <Item
