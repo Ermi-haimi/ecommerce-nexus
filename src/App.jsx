@@ -6,6 +6,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { SearchProvider } from "./components/Search";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
           <Footer />
         </BrowserRouter>
       </SearchProvider>
+      <ToastContainer position="top-right" autoClose={1000} />
     </main>
   );
 }

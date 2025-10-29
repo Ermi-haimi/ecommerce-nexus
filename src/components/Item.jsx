@@ -1,4 +1,19 @@
+import { toast } from "react-toastify";
+import { products } from "../assets/data/products";
+
 function Item(props) {
+  const message = () => {
+    toast.success(
+      <span>
+        <span className="font-bold">{props.itemDescription} </span> is added to
+        cart
+      </span>,
+      {
+        position: "top-right",
+      }
+    );
+  };
+
   return (
     <div className="flex flex-col border border-gray-300 items-center p-5">
       <div className="p-3">
@@ -32,7 +47,10 @@ function Item(props) {
             <option value="10">10</option>
           </select>
         </div>
-        <button className="bg-green-700 text-white p-1 rounded-sm opacity-95 mt-9 hover:opacity-90 cursor-pointer">
+        <button
+          className="bg-green-700 text-white p-1 rounded-sm opacity-95 mt-9 hover:opacity-90 cursor-pointer"
+          onClick={message}
+        >
           Add to Cart
         </button>
       </div>
